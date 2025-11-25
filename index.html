@@ -219,13 +219,13 @@
             <div class="calculator-content">
                 <div class="tab-content active" id="city-tab" role="tabpanel" aria-labelledby="tab-city" aria-hidden="false">
                     <p class="calculator-note">Для расчёта заполните форму</p>
-                    <p class="calculator-note">для более точного расчёта обращайтесь по номерам: <a href="tel:+375291150842">+375 29 115-08-42</a></p>
+                    <p class="calculator-note">для более точного расчёта обращайтесь по номерам: <a href="tel:+375291150842">+375 29 115-08-42</a> а1</p>
                     
                     <form class="calculator-form" id="calculator-form-city">
                         <div class="form-group">
                             <label>Тип поездки:</label>
                             <select id="trip-type" required>
-                                <option value="60">Поездка в одну сторону = 60</option>
+                                <option value="60" selected>Поездка в одну сторону = 60</option>
                                 <option value="54">Поездка в одну сторону для участник ВОВ, инвалидов 1й группы = 54</option>
                                 <option value="120">Туда и обратно с ожиданием в 40 минут = 120</option>
                                 <option value="50">Спуск/подъём = 50</option>
@@ -248,7 +248,7 @@
                         <div class="form-group">
                             <label>Вес больного:</label>
                             <select id="weight" required>
-                                <option value="0">до 80 кг = 0</option>
+                                <option value="0" selected>до 80 кг = 0</option>
                                 <option value="7">80-90 кг = 7</option>
                                 <option value="14">90-100 кг = 14</option>
                                 <option value="21">100-110 кг = 21</option>
@@ -301,13 +301,18 @@
                 
                 <div class="tab-content" id="country-tab" role="tabpanel" aria-labelledby="tab-country" aria-hidden="true">
                     <p class="calculator-note">Для расчёта заполните форму</p>
-                    <p class="calculator-note">для более точного расчёта обращайтесь по номерам: <a href="tel:+375291150842">+375 29 115-08-42</a></p>
+                    <p class="calculator-note">для более точного расчёта обращайтесь по номерам: <a href="tel:+375291150842">+375 29 115-08-42</a> а1</p>
                     
                     <form class="calculator-form" id="calculator-form-country">
                         <div class="form-group">
+                            <label>Введите киллометраж от черты Гомеля до пункта назначения:</label>
+                            <input type="number" id="distance-country" min="0" step="0.1" value="" required>
+                        </div>
+
+                        <div class="form-group">
                             <label>Тип поездки:</label>
                             <select id="trip-type-country" required>
-                                <option value="60">Поездка в одну сторону = 60</option>
+                                <option value="60" selected>Поездка в одну сторону = 60</option>
                                 <option value="54">Поездка в одну сторону для участник ВОВ, инвалидов 1й группы = 54</option>
                                 <option value="120">Туда и обратно с ожиданием в 40 минут = 120</option>
                                 <option value="50">Спуск/подъём = 50</option>
@@ -317,8 +322,8 @@
                         <div class="form-group">
                             <label>Время перевозки:</label>
                             <select id="time-country" required>
-                                <option value="10">с 06:00 до 08:00 = 10</option>
-                                <option value="0" selected>с 08:00 до 18:00 = 0</option>
+                                <option value="10" selected>с 06:00 до 08:00 = 10</option>
+                                <option value="0">с 08:00 до 18:00 = 0</option>
                                 <option value="10">с 18:00 до 20:00 = 10</option>
                                 <option value="20">с 20:00 до 21:00 = 20</option>
                                 <option value="20">с 22:00 до 23:00 = 20</option>
@@ -330,7 +335,7 @@
                         <div class="form-group">
                             <label>Вес больного:</label>
                             <select id="weight-country" required>
-                                <option value="0">до 80 кг = 0</option>
+                                <option value="0" selected>до 80 кг = 0</option>
                                 <option value="7">80-90 кг = 7</option>
                                 <option value="14">90-100 кг = 14</option>
                                 <option value="21">100-110 кг = 21</option>
@@ -359,18 +364,13 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label>Расстояние (км) - для поездок за город:</label>
-                            <input type="number" id="distance-country" min="0" step="0.1" value="0" required>
-                        </div>
-
                         <div class="form-group result-group">
                             <label class="result-label">Стоимость перевозки:</label>
-                            <p class="result-note-small">*расчет произведен без учета работы 2-го грузчика. *Рассчитанная стоимость является ориентировочной. Конечная стоимость рассчитывается индивидуально</p>
+                            <p class="result-note-small">*Рассчитанная стоимость является ориентировочной. Конечная стоимость рассчитывается индивидуально</p>
                             <div class="result-total">
                                 <span class="result-prefix">Итого: </span>
                                 <span id="total-price-country" class="result-value">0</span>
-                                <span class="result-postfix">BYN</span>
+                                <span class="result-postfix"> BYN</span>
                             </div>
                         </div>
                     </form>
@@ -378,13 +378,18 @@
                 
                 <div class="tab-content" id="cis-tab" role="tabpanel" aria-labelledby="tab-cis" aria-hidden="true">
                     <p class="calculator-note">Для расчёта заполните форму</p>
-                    <p class="calculator-note">для более точного расчёта обращайтесь по номерам: <a href="tel:+375291150842">+375 29 115-08-42</a></p>
+                    <p class="calculator-note">для более точного расчёта обращайтесь по номерам: <a href="tel:+375291150842">+375 29 115-08-42</a> а1</p>
                     
                     <form class="calculator-form" id="calculator-form-cis">
                         <div class="form-group">
+                            <label>Введите киллометраж:</label>
+                            <input type="number" id="distance-cis" min="0" step="0.1" value="0" required>
+                        </div>
+
+                        <div class="form-group">
                             <label>Тип поездки:</label>
                             <select id="trip-type-cis" required>
-                                <option value="60">Поездка в одну сторону = 60</option>
+                                <option value="60" selected>Поездка в одну сторону = 60</option>
                                 <option value="54">Поездка в одну сторону для участник ВОВ, инвалидов 1й группы = 54</option>
                                 <option value="120">Туда и обратно с ожиданием в 40 минут = 120</option>
                                 <option value="50">Спуск/подъём = 50</option>
@@ -407,7 +412,7 @@
                         <div class="form-group">
                             <label>Вес больного:</label>
                             <select id="weight-cis" required>
-                                <option value="0">до 80 кг = 0</option>
+                                <option value="0" selected>до 80 кг = 0</option>
                                 <option value="7">80-90 кг = 7</option>
                                 <option value="14">90-100 кг = 14</option>
                                 <option value="21">100-110 кг = 21</option>
@@ -436,18 +441,13 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label>Расстояние (км) - для поездок за город:</label>
-                            <input type="number" id="distance-cis" min="0" step="0.1" value="0" required>
-                        </div>
-
                         <div class="form-group result-group">
                             <label class="result-label">Стоимость перевозки:</label>
-                            <p class="result-note-small">*расчет произведен без учета работы 2-го грузчика.*Рассчитанная стоимость является ориентировочной. Конечная стоимость рассчитывается индивидуально</p>
+                            <p class="result-note-small">*Рассчитанная стоимость является ориентировочной. Конечная стоимость рассчитывается индивидуально</p>
                             <div class="result-total">
                                 <span class="result-prefix">Итого: </span>
                                 <span id="total-price-cis" class="result-value">0</span>
-                                <span class="result-postfix">BYN</span>
+                                <span class="result-postfix"> BYN</span>
                             </div>
                         </div>
                     </form>

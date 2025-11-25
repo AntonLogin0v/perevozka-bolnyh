@@ -219,18 +219,18 @@ function calculatePrice(type, config) {
 
     let total = 0;
 
-    // Расчёт для поездок по городу: vov+kg+et+time
+    // Расчёт для поездок по городу: тип поездки + вес + этаж + время
     if (type === 'city') {
         total = tripType + weight + floor + time;
     } 
-    // Расчёт для поездок по стране: km*2+kg+et+60+time
+    // Расчёт для поездок по стране: km*2 + тип поездки + вес + этаж + время
     else if (type === 'country') {
-        total = (distance * 2) + weight + floor + 60 + time;
+        total = (distance * 2) + tripType + weight + floor + time;
     } 
-    // Расчёт для поездок по СНГ: km*2.2+(km*2.2)/10+kg+et
+    // Расчёт для поездок по СНГ: km*2.2 + (km*2.2)/10 + тип поездки + вес + этаж + время
     else if (type === 'cis') {
         const kmCost = distance * 2.2;
-        total = kmCost + (kmCost / 10) + weight + floor;
+        total = kmCost + (kmCost / 10) + tripType + weight + floor + time;
     }
 
     // Отображаем результат
